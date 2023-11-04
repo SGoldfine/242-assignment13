@@ -48,7 +48,6 @@ const showJets = async () => {
         img.src = jet.img;
         section.append(img);
     });
-
 }
 
 const getJets = async () => {
