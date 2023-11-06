@@ -52,7 +52,11 @@ const showJets = async () => {
 
 const getJets = async () => {
   try {
-      return (await fetch("http://localhost:3000/api/jets")).json();
+      const response = await fetch("api/jets");
+      if(!response.ok) {
+        throw new Error('Error');
+      }
+      return await response.json();
   } catch(error) {
       console.log("error retrieving json");
       return "";
